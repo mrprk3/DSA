@@ -3,8 +3,10 @@ package com.mrprk.array;
 public class SecondLargest {
 	// Find the second largest number from array
 	public static void main(String[] args) {
-		int[] arr = { 1, 2, 4,3, 7, 7, 7 };
-		System.out.println(checkSortedOrNot(arr));
+		// int[] arr = { 1, 2, 4,3, 7, 7, 7 };
+		int[] arr = { 1, 2, 4, 7, 7, 5 };
+
+		System.out.println(getSecondLargest(arr));
 	}
 
 	public static boolean checkSortedOrNot(int[] arr) {
