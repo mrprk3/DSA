@@ -2,13 +2,13 @@ package com.mrprk;
 
 public class KoKoEatBanana {
 	public static void main(String[] args) {
-		int[] arr = { 3, 6, 2, 8 };
-		System.out.println(getFinalResult(arr, 7));
+		int[] arr = { 30,11,23,4,20 };
+		System.out.println(getFinalResult(arr, 6));
 	}
 
 	public static int getFinalResult(int[] arr, int totalHours) {
 		// we have to find out per hour
-		int start = 0;
+		int start = 1;
 		int end = findMax(arr);
 		int ans = 0;
 		while (start <= end) {

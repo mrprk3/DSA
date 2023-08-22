@@ -1,0 +1,35 @@
+package com.mrprk.array.mid;
+
+public class SingleNumber {
+	public static void main(String[] args) {
+		int[] arr = { 1,1,2};
+		System.out.println(findSingleNumber(arr,arr.length));
+	}
+
+	public static int findSingleNumber(int[] arr, int n) {
+		if (n == 1) {
+			return arr[0];
+		}
+		if (arr[0] != arr[1]) {
+			return arr[0];
+		}
+		if (arr[n - 1] != arr[n - 2]) {
+			return arr[n - 1];
+		}
+		int low = 0;
+		int high = n - 1;
+		while (low <= high) {
+			int mid = (low + high) / 2;
+			if (arr[mid] != arr[mid + 1] && arr[mid] != arr[mid - 1]) {
+				return arr[mid];
+			}
+			if (mid % 2 == 1 && arr[mid] == arr[mid - 1] || mid % 2 == 0 && arr[mid] == arr[mid + 1]) {
+				// if this above condition true then ans is on right so terminate left
+				low = mid + 1;
+			} else {
+				high = mid - 1;
+			}
+		}
+		return -1;
+	}
+}
